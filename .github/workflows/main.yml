@@ -8,7 +8,7 @@ on:
     - cron: '01 17 * * *'
 
 jobs:
-  clockIn:
+  Gym:
     runs-on: ubuntu-latest
     steps:
       - name: 'Checkout codes'
@@ -16,10 +16,10 @@ jobs:
       - name: 'Set python'
         uses: actions/setup-python@v1
         with:
-          python-version: '3.8'
+          python-version: '3.7.4'
       - name: 'Install dependencies'
         run: pip install -r requirements.txt
-      - name: 'Start clockIn'
+      - name: 'Start gym'
         env:
           DATA: ${{ secrets.DATA }}
         run: python main.py
