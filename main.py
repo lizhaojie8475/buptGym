@@ -29,7 +29,7 @@ if __name__ == "__main__":
     timeIndexes = ["02", "03", "04", "05", "06", "07", "08"]
     chrome_options = Options()
     # 设置chrome浏览器无界面模式
-    # chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--headless')
     chrome_options.add_argument('user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.29(0x18001d37) NetType/WIFI Language/zh_CN')
     browser = webdriver.Chrome(options=chrome_options)
 
@@ -56,7 +56,7 @@ if __name__ == "__main__":
             i += 1
         # 选择余额支付
         browser.find_element(By.CSS_SELECTOR, "input[value='确认预约']").click()
-        time.sleep(0.4)
+        time.sleep(0.45)
         browser.find_element(By.CSS_SELECTOR, "input[type='radio'][id='package_pay_54168']").click()
         time.sleep(0.3)
         browser.find_element(By.CSS_SELECTOR, "button[class='btn btn-primary g-submit']").click()
